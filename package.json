@@ -1,6 +1,6 @@
 {
   "name": "sass-maps-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert SCSS (or SASS) maps to JSON format for use in Fractal.",
   "main": "index.js",
   "keywords": [
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryan-bendel/sass-maps-to-json.git"
+    "url": "https://github.com/ryanbendel/sass-maps-to-json.git"
   },
   "dependencies": {
     "chalk": "^2.3.0",
