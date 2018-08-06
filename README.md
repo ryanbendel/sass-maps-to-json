@@ -1,4 +1,4 @@
-# Sass Maps to Json for Fractal [![NPM version][npm-image]][npm-url]
+# Convert Sass Colour Maps to Json for Fractal [![NPM version][npm-image]][npm-url]
 
 This library will convert a SASS/SCSS color map into a JSON file for the sole purpose of being used for a Fractal styleguide.
 
