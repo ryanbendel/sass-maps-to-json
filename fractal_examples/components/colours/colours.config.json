@@ -1,0 +1,58 @@
+{
+  "context": {
+    "colors": {
+      "Red": {
+        "swatches": [
+          {
+            "name": "(red, light)",
+            "hex": "#fff2f1"
+          },
+          {
+            "name": "(red, mid)",
+            "hex": "#ff7369"
+          },
+          {
+            "name": "(red, dark)",
+            "hex": "#c90d00"
+          }
+        ]
+      },
+      "Blue": {
+        "swatches": [
+          {
+            "name": "(blue, lightest)",
+            "hex": "#5e7298"
+          },
+          {
+            "name": "(blue, light)",
+            "hex": "#404d69"
+          }
+        ]
+      },
+      "Other": {
+        "swatches": [
+          {
+            "name": "black",
+            "hex": "#000"
+          },
+          {
+            "name": "link",
+            "hex": "#2A65BA"
+          },
+          {
+            "name": "input-highlight",
+            "hex": "#1ca09c"
+          },
+          {
+            "name": "panel-alt",
+            "hex": "#FFF7E2"
+          },
+          {
+            "name": "reg-plate",
+            "hex": "#f8e71c"
+          }
+        ]
+      }
+    }
+  }
+}
