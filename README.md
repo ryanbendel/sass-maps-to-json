@@ -82,15 +82,18 @@ $palette: (
       "Red": {
         "swatches": [
           {
-            "name": "(red, light)",
+            "name": "light",
+            "groupcollated": "(red, light)",
             "hex": "#fff2f1"
           },
           {
-            "name": "(red, mid)",
+            "name": "mid",
+            "groupcollated": "(red, mid)",
             "hex": "#ff7369"
           },
           {
-            "name": "(red, dark)",
+            "name": "dark",
+            "groupcollated": "(red, dark)",
             "hex": "#c90d00"
           }
         ]
@@ -98,11 +101,13 @@ $palette: (
       "Blue": {
         "swatches": [
           {
-            "name": "(blue, lightest)",
+            "name": "lightest",
+            "groupcollated": "(blue, lightest)",
             "hex": "#5e7298"
           },
           {
-            "name": "(blue, light)",
+            "name": "light",
+            "groupcollated": "(blue, light)",
             "hex": "#404d69"
           }
         ]
@@ -129,12 +134,17 @@ $palette: (
 ```
 ### Fractal Usage
 
-The drive for this script was to create as much of a "live" styleguide as possible, and we use [Fractal][fractal-url] to generate a static site in our build process  from our up to date sass files.
+The drive for this script was to create as much of a "live" styleguide as possible, and we use [Fractal][fractal-url] to generate a static site in our build process from our up to date sass files.
 Fractal uses `handlebars.js` as a template engine.
 
 I have included an example in the `fractal_examples` directory of this project which should help get you up and running. The file will output a section with named title for each group containing the colour name, and hex value
 
 ## Changelog
+ **v1.1.0 - 08-Aug-2018** 
+ - Updated output. Swatch now outputs `name` and `groupcollated` as well as the hex value
+ 
+ **v1.0.1 - 07-Aug-2018** 
+ - Docs update
  
  **v1.0.0 - 06-Aug-2018** 
  - initial release

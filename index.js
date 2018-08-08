@@ -43,7 +43,8 @@ function filterValues(values) {
                 colorsGroup = _.merge(colorsGroup, otherGroup);
             } else if (level > 0) {
                 colorsGroupTemp[capitalizeFirstLetter(colorsGroupTempName)].swatches.push({
-                    name: '(' + colorsGroupTempName + ', ' + item[0] + ')',
+                    name: item[0],
+                    groupcollated: '(' + colorsGroupTempName + ', ' + item[0] + ')',
                     hex: item[1]
                 });
             }
@@ -101,7 +102,8 @@ function toJson(settings, values) {
     };
     jsonfile.writeFile(settings.dest, contents, {spaces: 2, EOL: '\r\n'}, function (err) {
         if (err) {
-            console.log(chalk.red("ERROR - please refer to docs and ensure source is formatted correctly"));
+            console.log(chalk.red(err));
+            console.log(chalk.red("Please refer to docs and ensure source is formatted correctly and paths are correct"));
         } else {
             console.log(chalk.green("Success! - json outputted!"));
         }

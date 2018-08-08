@@ -1,6 +1,14 @@
 {{#each colors as |value key|}}
-	<div>{{key}}</div>
-  {{#each swatches as |childValue childKey|}}
-	  <div>{{name}} {{hex}}</div>
-  {{/each}}
+	<h2>{{ key }}</h2>
+	<div class="grid-list">
+		{{#each swatches as |childValue childKey|}}
+			<div class="grid-list__item">
+				<div class="color" style="color: {{ hex }}">
+					<pre>{{ groupcollated }}</pre>
+					<pre>{{ name }}
+						<span>{{ hex }}</span></pre>
+				</div>
+			</div>
+		{{/each}}
+	</div>
 {{/each}}

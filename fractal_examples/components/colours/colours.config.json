@@ -4,15 +4,18 @@
       "Red": {
         "swatches": [
           {
-            "name": "(red, light)",
+            "name": "light",
+            "groupcollated": "(red, light)",
             "hex": "#fff2f1"
           },
           {
-            "name": "(red, mid)",
+            "name": "mid",
+            "groupcollated": "(red, mid)",
             "hex": "#ff7369"
           },
           {
-            "name": "(red, dark)",
+            "name": "dark",
+            "groupcollated": "(red, dark)",
             "hex": "#c90d00"
           }
         ]
@@ -20,11 +23,13 @@
       "Blue": {
         "swatches": [
           {
-            "name": "(blue, lightest)",
+            "name": "lightest",
+            "groupcollated": "(blue, lightest)",
             "hex": "#5e7298"
           },
           {
-            "name": "(blue, light)",
+            "name": "light",
+            "groupcollated": "(blue, light)",
             "hex": "#404d69"
           }
         ]
