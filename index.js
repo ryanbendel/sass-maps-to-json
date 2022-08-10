@@ -1,9 +1,10 @@
-import lodash from 'lodash';
-import fs from 'fs';
-import chalk from 'chalk';
-import jsonfile from 'jsonfile';
+var
+    _ = require('lodash'),
+    fs = require('fs'),
+    chalk = require('chalk'),
+    jsonfile = require('jsonfile');
 
-export default convertFile
+module.exports = convertFile;
 
 function convertFile(settings) {
     var values = readCss(settings);
@@ -23,16 +24,15 @@ function filterValues(values) {
 
     var level = 0;
     values.forEach(function (item) {
-        let swatch;
-        if (lodash.includes(item, '(')) {
+        if (_.includes(item, '(')) {
             level = level + 2;
             colorsGroupTempName = item[0];
             colorsGroupTemp[capitalizeFirstLetter(colorsGroupTempName)] = {
                 swatches: []
             };
-        } else if (lodash.includes(item, ')')) {
+        } else if (_.includes(item, ')')) {
             level = level - 2;
-            colorsGroup = lodash.merge(colorsGroup, colorsGroupTemp);
+            colorsGroup = _.merge(colorsGroup, colorsGroupTemp);
         } else {
             if (level === 0) {
                 swatch = {
@@ -40,7 +40,7 @@ function filterValues(values) {
                     hex: item[1]
                 };
                 otherGroup["Other"].swatches.push(swatch);
-                colorsGroup = lodash.merge(colorsGroup, otherGroup);
+                colorsGroup = _.merge(colorsGroup, otherGroup);
             } else if (level > 0) {
                 colorsGroupTemp[capitalizeFirstLetter(colorsGroupTempName)].swatches.push({
                     name: item[0],
@@ -55,25 +55,25 @@ function filterValues(values) {
 
 
 function readCss(settings) {
-    let newArray;
     // split at new lines, and then filter out lines that start with $ (i.e. map name)
-    var data = lodash.filter(fs.readFileSync(settings.src, 'utf8').split('\n'), item => !lodash.startsWith(item, '$'));
+    var data = _.filter(fs.readFileSync(settings.src, 'utf8').split('\n'), item => !_.startsWith(item, '$'));
     // filter out any comments in the map, trimming leading whitespace
-    data = lodash.filter(data, item => !lodash.startsWith(lodash.trimStart(item), '/'));
+    data = _.filter(data, item => !_.startsWith(_.trimStart(item), '/'));
     newArray = [];
-    let map = lodash.map(data, (item) => {
-        let x = lodash.split(item, ':');
+    let map = _.map(data, (item) => {
+        let x = _.split(item, ':');
 
         filterData(x);
         newArray.push(x);
     });
-    newArray = lodash.filter(newArray, function (sub) {
+    newArray = _.filter(newArray, function (sub) {
         return sub.length;
     });
     return newArray
 }
 
 function filterData(x) {
+    filterArray = [];
     for (var i = 0; i < x.length; i++) {
         x[i] = x[i].replace(/default/, '').replace(/!/, '').replace(/\s/g, '').replace(/,/g, '').replace(/;/g, '').trim();
     }
